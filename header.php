@@ -261,7 +261,7 @@ jQuery('.drop-down ul li').slideToggle();
                                 <option value="en" style="background-image:url('images/flag/usa.png');" <?php echo $_Sen; ?>>Ingles</option>
                                 <option value="de" style="background-image:url('images/flag/germany.png');" <?php echo $_Sed; ?>>Aleman</option>
                                 <option value="fr" style="background-image:url('images/flag/france.png');" <?php echo $_Sfr; ?>>Frances</option>
-                                <option value="it" style="background-image:url('images/flag/italy.png');" <?php echo $_Sed; ?>>Italiano</option>
+                                <option value="it" style="background-image:url('images/flag/italy.png');" <?php echo $_Sit; ?>>Italiano</option>
                             </select>
                             
                             <!--</div>-->
