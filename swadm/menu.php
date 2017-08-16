@@ -33,7 +33,7 @@
                               <li><a href="nosotros.php" style="margin-left: 10px;">
                                 <i class="fa fa-angle-double-right"></i>Empresa</a>
                               </li>                
-                              <li><a href="servicios.php" style="margin-left: 10px;">
+                              <li><a href="paquetes.php" style="margin-left: 10px;">
                                 <i class="fa fa-angle-double-right"></i>Lineas de Negocio</a>
                               </li>                
                               <li><a href="album.php" style="margin-left: 10px;">
