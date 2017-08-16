@@ -1,44 +1,16 @@
 <?php include 'header.php'; ?>
 <?php 
-require_once('Zebra_pagination.php');
-
-///
- $idioma = $_SESSION['idioma'];
-  switch ($idioma) {
-   case 'es':
-        $lenguaje = 'Español';
-        $tabla = 'cmd_noticia';
-        break;
-    case 'en':
-         $lenguaje = 'Ingles';
-         $tabla = 'cmd_noticia_en';
-        break;
-    case 'de':
-         $lenguaje = 'Aleman';
-         $tabla = 'cmd_noticia_de';
-        break;
-    }
-///
-
 mysql_select_db($database_conexion, $conexion);
-$query_mos_portada = "select * from cmd_fotos where fot_activo = 1 order by fot_id desc";
+$query_mos_portada = "select * from cmd_partners order by par_id desc";
 $mos_portada = mysql_query($query_mos_portada, $conexion) or die(mysql_error());
 $row_mos_portada = mysql_fetch_assoc($mos_portada);
 $totalRows_mos_portada = mysql_num_rows($mos_portada); 
-
+/*
 mysql_select_db($database_conexion, $conexion);
-
 $query_mos_noticias = "SELECT * FROM ".$tabla." where not_activo=1 order by not_id desc LIMIT 5";
-
 $mos_noticias = mysql_query($query_mos_noticias, $conexion) or die(mysql_error());
-
 $row_mos_noticias = mysql_fetch_assoc($mos_noticias);
-
 $totalRows_mos_noticias = mysql_num_rows($mos_noticias);
-
-////
-
-//paginacion
 
 mysql_select_db($database_conexion, $conexion);
 
@@ -71,7 +43,7 @@ $mos_noticia = mysql_query($query_mos_noticia, $conexion) or die(mysql_error());
 $row_mos_noticia = mysql_fetch_assoc($mos_noticia);
 
 $totalRows_mos_noticia = mysql_num_rows($mos_noticia);
-
+*/
 ?>
 <!-- Header Lower -->
         <div class="header-lower">
@@ -156,14 +128,11 @@ $totalRows_mos_noticia = mysql_num_rows($mos_noticia);
                             <div class="slider-container">
                                 
                                 <ul class="slider">
-                                    <li><a href="#"><img src="images/clients/1.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/2.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/3.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/4.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/1.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/2.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/3.png" alt="" title=""></a></li>
-                                    <li><a href="#"><img src="images/clients/4.png" alt="" title=""></a></li>
+                                <?php do { ?>
+                                    <li><a href="#">
+                                        <img src="images/clients/<?php echo $row_mos_portada['par_imagen']; ?> ?>" alt="" title="<?php echo $row_mos_portada['par_descrip']; ?>" height="80px" width="200px"></a>
+                                    </li>
+                                <?php } while ($row_mos_portada = mysql_fetch_assoc($mos_portada)); ?>
                                 </ul>
                                 
                             </div>

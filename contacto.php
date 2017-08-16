@@ -48,6 +48,8 @@ $totalRows_mos_config = mysql_num_rows($mos_config);
 $_Ses='';
 $_Sen='';
 $_Sed='';
+$_Sfr='';
+$_Sit='';
 
 if(isset($_POST['ordenar']))
 {  
@@ -63,6 +65,12 @@ if(isset($_POST['ordenar']))
         $_Sed = 'selected';
     }
   /////
+       if ($_SESSION["idioma"]== 'fr'){
+        $_Sfr = 'selected';
+    }
+    if ($_SESSION["idioma"]== 'it'){
+        $_Sit = 'selected';
+    }
 }
 elseif (!@$_SESSION["idioma"]) { 
     
@@ -78,6 +86,12 @@ elseif (!@$_SESSION["idioma"]) {
     case 'de':
         $_SESSION["idioma"] = 'de';
         break;
+    case 'fr':
+        $_SESSION["idioma"] = 'fr';
+        break;
+    case 'it':
+        $_SESSION["idioma"] = 'it';
+        break;    
     default:
         $_SESSION["idioma"] = 'es';
         break;
@@ -96,6 +110,15 @@ elseif (!@$_SESSION["idioma"]) {
     elseif ($_SESSION["idioma"]== 'de'){
         $_Sed = 'selected';
         $_flag = 'germany.png';
+    }
+    //
+    elseif ($_SESSION["idioma"]== 'fr'){
+        $_Sfr = 'selected';
+        $_flag = 'france.png';
+    }
+    elseif ($_SESSION["idioma"]== 'it'){
+        $_Sit = 'selected';
+        $_flag = 'italy.png';
     }
     else 
     {
@@ -159,6 +182,8 @@ $row_mos_url = mysql_fetch_assoc($mos_url);
                                                       <option value="es" <?php echo $_Ses; ?> >Español</option>
                                                       <option value="en" <?php echo $_Sen; ?>>Ingles</option>
                                                       <option value="de" <?php echo $_Sed; ?>>Aleman</option>
+                                                      <option value="fr" <?php echo $_Sfr; ?>>Frances</option>
+                                                      <option value="it" <?php echo $_Sit; ?>>Italiano</option>
                                                     </select>
                                                     </form>
                     </div>
@@ -210,15 +235,15 @@ $row_mos_url = mysql_fetch_assoc($mos_url);
                                 <li><a href="index.php"><?php echo $row_mos_url['url_inicio']; ?></a>
                                    
                                 </li>
-                                <li class="dropdown"><a href="nosotros.php"><?php echo $row_mos_url['url_nosotros']; ?></a>
+                                <li class="dropdown"><a href="empresa.php"><?php echo $row_mos_url['url_nosotros']; ?></a>
                                    
                                 </li>
-                                <li class="dropdown"><a href="servicios.php"><?php echo $row_mos_url['url_servicios']; ?></a>
+                                <li class="dropdown"><a href="lineas.php"><?php echo $row_mos_url['url_servicios']; ?></a>
                                   
                                 </li>
                                 <li><a href="galeria.php"><?php echo $row_mos_url['url_galeria']; ?></a></li>
                                 <li><a href="videos.php"><?php echo $row_mos_url['url_video']; ?></a></li>
-                                 <li><a href="paquetes.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
+                                 <li><a href="partners.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
                                 <li class="current dropdown"><a href="contacto.php"><?php echo $row_mos_url['url_contacto']; ?></a></li>
                                 
                             </ul>

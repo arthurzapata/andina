@@ -31,10 +31,10 @@
                                 <i class="fa fa-angle-double-right"></i>Portada</a>
                               </li>                
                               <li><a href="nosotros.php" style="margin-left: 10px;">
-                                <i class="fa fa-angle-double-right"></i>Nosotros</a>
+                                <i class="fa fa-angle-double-right"></i>Empresa</a>
                               </li>                
                               <li><a href="servicios.php" style="margin-left: 10px;">
-                                <i class="fa fa-angle-double-right"></i>Servicios</a>
+                                <i class="fa fa-angle-double-right"></i>Lineas de Negocio</a>
                               </li>                
                               <li><a href="album.php" style="margin-left: 10px;">
                                 <i class="fa fa-angle-double-right"></i>Galería de Imágenes</a>
@@ -42,8 +42,8 @@
                               <li><a href="video.php" style="margin-left: 10px;">
                                 <i class="fa fa-angle-double-right"></i>Video</a>
                               </li>         
-                              <li><a href="paquetes.php" style="margin-left: 10px;">
-                                <i class="fa fa-angle-double-right"></i>Paquetes</a>
+                              <li><a href="partners.php" style="margin-left: 10px;">
+                                <i class="fa fa-angle-double-right"></i>Partners</a>
                               </li>                  
                             </ul>
                         </li>
