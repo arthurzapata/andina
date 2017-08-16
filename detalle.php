@@ -52,13 +52,13 @@ $mail = new PHPMailer();
 $mail->Host = "localhost";
 $mail->From = $row_mos_config['con_email']; // de la empresa
 $mail->FromName = $row_mos_config['con_nombrewebsite']; 
-$mail->Subject = "Solicitud de Reserva";
+$mail->Subject = "Solicitud de Cotizaciòn";
 $mail->AddAddress($correo);  //'informes@lacade.com'; correo empresa
 //$mail->AddAddress($row_mos_config['con_email']);
 $content="<table class='bod'>
 <tr> 
     <td>
-   Solicitud de Reserva !!
+   Solicitar Cotizaciòn !!
     </td>
 </tr>
   <tr> 
@@ -66,11 +66,7 @@ $content="<table class='bod'>
         Nombres y Apellidos : ".$_POST["name"]."  
     </td>
   </tr>
-  <tr> 
-    <td>
-        Desde : ".$_POST["desde"]." -  Hasta :" .$_POST["hasta"]. "
-  </td>
-  </tr>
+  
   <tr> 
     <td>
         Email : ".$_POST["email"]." -  Telefono:" .$_POST["url"]. "
@@ -78,7 +74,7 @@ $content="<table class='bod'>
   </tr>
   <tr> 
     <td>
-       Cantidad de Personas : ".$_POST["quantity"]." 
+       Comentario : ".$_POST["comentario"]." 
   </td>
   </tr>
   <tr>
@@ -120,15 +116,15 @@ $content="<table class='bod'>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="index.php"><?php echo $row_mos_url['url_inicio']; ?></a>
                                 </li>
-                                <li class="dropdown"><a href="nosotros.php"><?php echo $row_mos_url['url_nosotros']; ?></a>
+                                <li class="dropdown"><a href="empresa.php"><?php echo $row_mos_url['url_nosotros']; ?></a>
                                 </li>
-                                <li class="dropdown"><a href="servicios.php"><?php echo $row_mos_url['url_servicios']; ?></a>
+                                <li class="dropdown"><a href="lineas.php"><?php echo $row_mos_url['url_servicios']; ?></a>
                                 </li>
                                 <li class="dropdown"><a href="galeria.php"><?php echo $row_mos_url['url_galeria']; ?></a></li>
                                 <li><a href="videos.php"><?php echo $row_mos_url['url_video']; ?></a>
                                 
                                 </li>
-                                 <li class="dropdown current"> <a href="paquetes.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
+                                 <li class="dropdown current"> <a href="partners.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
                                 <li><a href="contacto.php"><?php echo $row_mos_url['url_contacto']; ?></a></li>
                                 
                             </ul>
@@ -149,8 +145,8 @@ $content="<table class='bod'>
     <!--We Are Best-->
       <section class="page-banner" style="background-image:url(images/background/page-banner-bg-2.jpg);">
     	<div class="auto-container text-center">
-        	<h1><?php echo $row_mos_url['url_paquetes']; ?></h1>
-            <ul class="bread-crumb"><li><a href="index.html"><?php echo $row_mos_url['url_inicio']; ?></a></li> <li><?php echo $row_mos_url['url_paquetes']; ?></li></ul>
+        	<h1><?php echo $row_mos_url['url_servicios']; ?></h1>
+            <ul class="bread-crumb"><li><a href="index.html"><?php echo $row_mos_url['url_inicio']; ?></a></li> <li><?php echo $row_mos_url['url_servicios']; ?></li></ul>
         </div>
     </section>
     
@@ -297,13 +293,13 @@ $content="<table class='bod'>
                                 <p>
                                   <a href="https://vimeo.com/204776636">Nachthexen</a> from <a href="https://vimeo.com/theanimationworkshop">The Animation Workshop</a> on <a href="https://vimeo.com">Vimeo</a>.
                                 </p>
-                            -->
+                            
                             <h3><?php echo $row_mos_url['url_precio']; ?></h3>
                 
                             <a class="primary-btn hvr-bounce-to-left">
                             <span class="btn-text" style="font-size:24px;"><?php echo $row_mos_noticia['not_moneda'];?>  <?php echo $row_mos_noticia['not_precio'];?></span> <strong class="icon">
                             <span class="f-icon flaticon-textfile5"></span></strong></a>
-
+-->
                              <br>
                             <h3><?php echo $row_mos_url['url_reservas']; ?></h3>
                             <div class="row form">
@@ -311,7 +307,7 @@ $content="<table class='bod'>
                                     <form class="comment-area" method="post">
                                      
                                      
-                                        <div class="form-group"><?php echo $row_mos_url['url_desde']; ?>
+                                      <!--  <div class="form-group"><?php echo $row_mos_url['url_desde']; ?>
                                         <input type="date" class="form-control" name="desde" placeholder="dd-mm-yyyy" required>
                                         </div>
                                      
@@ -319,7 +315,7 @@ $content="<table class='bod'>
                                         <div class="form-group"><?php echo $row_mos_url['url_hasta']; ?>
                                         <input type="date" class="form-control" name="hasta" placeholder="dd-mm-yyyy" required>
                                         </div>
-                                     
+                                     -->
                                     <div class="form-group"><?php echo $row_mos_url['url_usuario']; ?>
                                         <input type="text" class="form-control" name="name" placeholder="<?php echo $row_mos_url['url_usuario']; ?>" required>
                                     </div>
@@ -332,8 +328,8 @@ $content="<table class='bod'>
                                         <input type="text" class="form-control" name="url" placeholder="<?php echo $row_mos_url['url_telefono']; ?>" required>
                                     </div>
                                     <div class="form-group"><?php echo $row_mos_url['url_cantidad']; ?>
-                                    <input type="number" name="quantity" min="1" max="6" value="1" class="form-control" required>
-                                        <!--<textarea class="form-control" name="comment" placeholder="Your Message"></textarea>-->
+                                    <!-- <input type="number" name="quantity" min="1" max="6" value="1" class="form-control" required>-->
+                                       <textarea class="form-control" name="comentario" placeholder=""></textarea>
                                     </div>
                                     <div class="">
                                         <button class="full-btn block"><?php echo $row_mos_url['url_reservas']; ?></button>

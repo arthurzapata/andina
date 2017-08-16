@@ -409,7 +409,7 @@ $queryString_mos_noticia = sprintf("&totalRows_mos_noticia=%d%s", $totalRows_mos
 
                                 <div class="box-header">
 
-                                    <h3 class="box-title">Gestor de Paquetes</h3>
+                                    <h3 class="box-title">Gestor de Lineas de Negocio</h3>
 
                   				</div>
 
@@ -433,7 +433,7 @@ $queryString_mos_noticia = sprintf("&totalRows_mos_noticia=%d%s", $totalRows_mos
 
     <td><div align="center"><strong>#</strong></div></td>
 
-    <td><div align="center"><strong>Paquete</strong></div></td> 
+    <td><div align="center"><strong>Lìnea</strong></div></td> 
 
     <!--<td><div align="center"><strong>Descripción</strong></div></td>
 
