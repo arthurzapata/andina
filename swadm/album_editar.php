@@ -16,10 +16,12 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                            GetSQLValueString($_POST['alb_tit_aleman'], "text"),
                            GetSQLValueString(isset($_POST['alb_activo']) ? "true" : "", "defined","1","0"));
                            */
-      $insertSQL =  sprintf("UPDATE cmd_album SET alb_titulo=%s,  alb_tit_ingles=%s,  alb_tit_aleman=%s, alb_activo = %s WHERE alb_id=%s",
+      $insertSQL =  sprintf("UPDATE cmd_album SET alb_titulo=%s,  alb_tit_ingles=%s,alb_tit_aleman=%s, alb_tit_frances=%s, alb_tit_italiano=%s,  alb_activo = %s WHERE alb_id=%s",
                           GetSQLValueString($_POST['alb_titulo'], "text"),
                            GetSQLValueString($_POST['alb_tit_ingles'], "text"),
                            GetSQLValueString($_POST['alb_tit_aleman'], "text"),
+                           GetSQLValueString($_POST['alb_tit_frances'], "text"),
+                           GetSQLValueString($_POST['alb_tit_italiano'], "text"),
                            GetSQLValueString(isset($_POST['alb_activo']) ? "true" : "", "defined","1","0"),
                            GetSQLValueString($_POST['alb_id'], "int"));
   
@@ -72,6 +74,14 @@ $row_mos_portada = mysql_fetch_assoc($mos_portada);
                         </div>
                         <div class="form-group">Título Alemán: <input type="text" name="alb_tit_aleman" value="<?php echo htmlentities($row_mos_portada['alb_tit_aleman'], ENT_COMPAT, 'UTF-8'); ?>" class="form-control" required>
                         </div>
+
+                                                 <div class="form-group">Título Frances: <input type="text" name="alb_tit_frances" value="<?php echo htmlentities($row_mos_portada['alb_tit_frances'], ENT_COMPAT, 'UTF-8'); ?>" class="form-control" required>
+                        </div>
+                                                <div class="form-group">Título Italiano: <input type="text" name="alb_tit_italiano" value="<?php echo htmlentities($row_mos_portada['alb_tit_italiano'], ENT_COMPAT, 'UTF-8'); ?>" class="form-control" required>
+                        </div> 
+
+
+
                         <div class="form-group">Estado: <input type="checkbox" name="alb_activo" <?php if (!(strcmp(htmlentities($row_mos_portada['alb_activo'], ENT_COMPAT, 'UTF-8'),1))) {echo "checked=\"checked\"";} ?>>
                         </div>
                        
