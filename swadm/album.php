@@ -113,6 +113,12 @@ if (isset($_SESSION['MM_Username'])) {
     case 'de':
          $lenguaje = 'Aleman';
         break;
+    case 'fr':
+         $lenguaje = 'Frances';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+        break;
     }
 }
 mysql_select_db($database_conexion, $conexion);
@@ -179,11 +185,13 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
           chmod($nombre_nuevo_con_carpeta,0777);
           }
 */
-  $insertSQL = sprintf("INSERT INTO cmd_album (alb_titulo, alb_tit_ingles,alb_tit_aleman,alb_activo) VALUES (%s, %s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO cmd_album (alb_titulo, alb_tit_ingles,alb_tit_aleman,alb_activo, alb_tit_frances, alb_tit_italiano) VALUES (%s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['alb_titulo'],"text"),
                        GetSQLValueString($_POST['alb_tit_ingles'],"text"),
                        GetSQLValueString($_POST['alb_tit_aleman'],"text"),
-                       GetSQLValueString(isset($_POST['alb_activo']) ? "true" : "", "defined","1","0"));
+                       GetSQLValueString(isset($_POST['alb_activo']) ? "true" : "", "defined","1","0"),
+                       GetSQLValueString($_POST['alb_tit_frances'],"text"),
+                       GetSQLValueString($_POST['alb_tit_italiano'],"text"));
 
   mysql_select_db($database_conexion, $conexion);
   $Result1 = mysql_query($insertSQL, $conexion) or die(mysql_error());
@@ -342,31 +350,43 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
 <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
 <div class="row">
-    <div class="col-lg-3 col-md-3">
-    
+<div class="col-lg-2 col-md-2">
         <div class="form-group">Título Español
             <input type="text" name="alb_titulo" value="" class="form-control">
         </div>
     </div>
-    <div class="col-lg-3 col-md-3">
+<div class="col-lg-2 col-md-2">
     
         <div class="form-group">Título Ingles
             <input type="text" name="alb_tit_ingles" value="" class="form-control">
         </div>
     </div>
-    <div class="col-lg-3 col-md-3">
+<div class="col-lg-2 col-md-2">
     
         <div class="form-group">Título Alemán
             <input type="text" name="alb_tit_aleman" value="" class="form-control">
         </div>
     </div>
-    <div class="col-lg-1 col-md-1">
-        <div class="form-group">Activo     :
-
-            <input  name="alb_activo" type="checkbox" value="" checked>
+    <div class="col-lg-2 col-md-2">
+    
+        <div class="form-group">Título Frances
+            <input type="text" name="alb_tit_frances" value="" class="form-control">
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+    
+        <div class="form-group">Título Italiano
+            <input type="text" name="alb_tit_italiano" value="" class="form-control">
+        </div>
+    </div>
+     <div class="col-lg-2 col-md-2">
+        <div class="form-group">Activo <input  name="alb_activo" type="checkbox" value="" checked>
         </div>
    </div>
-   <div class="col-lg-1 col-md-1">
+</div>
+<div class="row">
+  
+   <div class="col-lg-2 col-md-2">
         <div class="form-group">.
         <input type="submit" value="Guardar" class="btn btn-primary btn-block">
         <!--<a href="galeria.php" class="btn btn-default">Cancelar</a>-->
@@ -388,6 +408,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <td><div align="center"><strong>Título Español</strong></div></td>
     <td><div align="center"><strong>Título Inglés</strong></div></td>
     <td><div align="center"><strong>Título Alemán</strong></div></td>
+    <td><div align="center"><strong>Título Francés</strong></div></td>
+    <td><div align="center"><strong>Título Italiano</strong></div></td>
     <td><div align="center"><strong>Estado</strong></div></td>
     <td colspan="3"><div align="center"><strong>Acciones</strong></div></td>
   </tr>
@@ -397,6 +419,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
       <td><div align="center"><?php echo $row_mos_imagen['alb_titulo']; ?></div></td>
       <td><div align="center"><?php echo $row_mos_imagen['alb_tit_ingles']; ?></div></td>
       <td><div align="center"><?php echo $row_mos_imagen['alb_tit_aleman']; ?></div></td>
+      <td><div align="center"><?php echo $row_mos_imagen['alb_tit_frances']; ?></div></td>
+      <td><div align="center"><?php echo $row_mos_imagen['alb_tit_italiano']; ?></div></td>
       <td><div align="center">
       <a href="update_estado_alb.php?pk=<?php echo $row_mos_imagen['alb_id']; ?>" title="Cambiar Estado">
         <button class="btn btn-<?php if($row_mos_imagen['alb_activo']==0) echo 'danger'; else echo 'success'; ?>" type="button"></button>

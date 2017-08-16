@@ -113,6 +113,12 @@ if (isset($_SESSION['MM_Username'])) {
     case 'de':
          $lenguaje = 'Aleman';
         break;
+    case 'fr':
+         $lenguaje = 'Frances';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+        break;
     }
 }
 mysql_select_db($database_conexion, $conexion);

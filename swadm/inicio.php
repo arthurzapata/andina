@@ -114,6 +114,12 @@ if (isset($_SESSION['MM_Username'])) {
     case 'de':
          $lenguaje = 'Aleman';
         break;
+            case 'fr':
+         $lenguaje = 'Frances';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+        break;
     }
 }
 mysql_select_db($database_conexion, $conexion);
@@ -331,7 +337,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
         <div class="box-body">
           
            <div class="row">     
-                <div class="col-md-10"> <?php echo $msje; ?>
+                <div class="col-md-10"> <?php echo @$msje; ?>
 <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1" enctype="multipart/form-data">
      
      <div class="row">
