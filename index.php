@@ -117,7 +117,7 @@ $row_mos_inicio = mysql_fetch_assoc($mos_inicio);
                     data-endeasing="Power4.easeIn"
                     style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
                         <div class="link-btn">
-                        <a class="primary-btn hvr-bounce-to-left" href="paquetes.php">
+                        <a class="primary-btn hvr-bounce-to-left" href="lineas.php">
                             <span class="btn-text "><?php echo $row_mos_url['url_leer']; ?></span> 
                             <strong class="icon"><span class="f-icon flaticon-right11"></span></strong>
                         </a>

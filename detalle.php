@@ -130,7 +130,6 @@ $content="<table class='bod'>
                                 </li>
                                 <li class="dropdown"><a href="galeria.php"><?php echo $row_mos_url['url_galeria']; ?></a></li>
                                 <li><a href="videos.php"><?php echo $row_mos_url['url_video']; ?></a>
-                                
                                 </li>
                                  <li class="dropdown"> <a href="partners.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
                                 <li><a href="contacto.php"><?php echo $row_mos_url['url_contacto']; ?></a></li>
