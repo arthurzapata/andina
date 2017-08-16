@@ -117,6 +117,14 @@ if (isset($_SESSION['MM_Username'])) {
          $lenguaje = 'Aleman';
          $tabla = 'cmd_noticia_de';
         break;
+    case 'fr':
+         $lenguaje = 'Frances';
+         $tabla = 'cmd_noticia_fr';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+         $tabla = 'cmd_noticia_it';
+        break;
     }
 }
 mysql_select_db($database_conexion, $conexion);
@@ -411,11 +419,7 @@ $queryString_mos_noticia = sprintf("&totalRows_mos_noticia=%d%s", $totalRows_mos
 
                                     <h3 class="box-title">Gestor de Lineas de Negocio</h3>
 
-                  				</div>
-
-                                        
-
-                                                                         
+                  				</div>                                                                        
 
                   <div class="box-body">
 
