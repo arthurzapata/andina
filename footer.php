@@ -14,7 +14,31 @@ where fot_activo = 1 and a.alb_activo = 1 limit 9";
 $mos_img = mysql_query($query_mos_img, $conexion) or die(mysql_error());
 $row_mos_img = mysql_fetch_assoc($mos_img);
 
-$query_mos_ser = "select * from cmd_servicios where ser_activo = 1 and ser_idioma='".$_SESSION["idioma"]."' limit 6";
+//$query_mos_ser = "select * from cmd_servicios where ser_activo = 1 and ser_idioma='".$_SESSION["idioma"]."' limit 6";
+$idioma = $_SESSION['idioma'];
+  switch ($idioma) {
+   case 'es':
+        $lenguaje = 'Español';
+        $tabla = 'cmd_noticia';
+        break;
+    case 'en':
+         $lenguaje = 'Ingles';
+         $tabla = 'cmd_noticia_en';
+        break;
+    case 'de':
+         $lenguaje = 'Aleman';
+         $tabla = 'cmd_noticia_de';
+        break;
+         case 'fr':
+         $lenguaje = 'Frances';
+         $tabla = 'cmd_noticia_fr';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+         $tabla = 'cmd_noticia_it';
+        break;   
+    }
+$query_mos_ser = "select * from ".$tabla." where not_activo=1";
 $mos_ser = mysql_query($query_mos_ser, $conexion) or die(mysql_error());
 $row_mos_ser = mysql_fetch_assoc($mos_ser);
 ?>
@@ -48,7 +72,7 @@ $row_mos_ser = mysql_fetch_assoc($mos_ser);
                     	<ul>
                         <?php do { ?>  
                             <li><span class="fa fa-angle-right"></span> 
-                                <a href="lineas.php"><?php echo $row_mos_ser['ser_descripcion']; ?></a>
+                                <a href="lineas.php"><?php echo $row_mos_ser['not_titulo']; ?></a>
                             </li>
                         <?php } while ($row_mos_ser = mysql_fetch_assoc($mos_ser)); ?> 
                         </ul>
