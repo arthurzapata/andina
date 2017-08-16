@@ -17,6 +17,14 @@ require_once('Zebra_pagination.php');
          $lenguaje = 'Aleman';
          $tabla = 'cmd_noticia_de';
         break;
+         case 'fr':
+         $lenguaje = 'Frances';
+         $tabla = 'cmd_noticia_fr';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+         $tabla = 'cmd_noticia_it';
+        break;   
     }
 ///
 
