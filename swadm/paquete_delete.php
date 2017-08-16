@@ -83,6 +83,18 @@ if ((isset($_GET['id'])) && ($_GET['id'] != "")) {
                        GetSQLValueString($_GET['id'], "int"));
   mysql_select_db($database_conexion, $conexion);
   $Result1 = mysql_query($deleteSQL, $conexion) or die(mysql_error());
+
+   $deleteSQL = sprintf("DELETE FROM cmd_noticia_fr WHERE not_id=%s",
+
+                       GetSQLValueString($_GET['id'], "int"));
+  mysql_select_db($database_conexion, $conexion);
+  $Result1 = mysql_query($deleteSQL, $conexion) or die(mysql_error());
+
+   $deleteSQL = sprintf("DELETE FROM cmd_noticia_it WHERE not_id=%s",
+
+                       GetSQLValueString($_GET['id'], "int"));
+  mysql_select_db($database_conexion, $conexion);
+  $Result1 = mysql_query($deleteSQL, $conexion) or die(mysql_error());
   //
 
 

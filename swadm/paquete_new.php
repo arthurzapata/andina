@@ -117,6 +117,14 @@ if (isset($_SESSION['MM_Username'])) {
          $lenguaje = 'Aleman';
          $tabla = 'cmd_noticia_de';
         break;
+        case 'fr':
+         $lenguaje = 'Frances';
+         $tabla = 'cmd_noticia_fr';
+        break;
+    case 'it':
+         $lenguaje = 'Italiano';
+         $tabla = 'cmd_noticia_it';
+        break;
     }
 }
 $msje = '';
@@ -221,6 +229,38 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
                        GetSQLValueString($_POST['not_video'], "text"));
   mysql_select_db($database_conexion, $conexion);
   $Result1 = mysql_query($insertSQL, $conexion) or die(mysql_error());
+
+  ////
+  $insertSQL = sprintf("INSERT INTO cmd_noticia_fr (not_id, not_titulo, not_nota, not_activo,not_imagen, not_precio, not_moneda, not_tipovideo, not_video) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                       GetSQLValueString($idped, "int"),
+                       GetSQLValueString($_POST['not_titulo'], "text"),
+                       GetSQLValueString($sContent, "text"),
+                       GetSQLValueString(isset($_POST['not_activo']) ? "true" : "", "defined","1","0"),
+                       GetSQLValueString($nombre_nuevo, "text"),
+                     //  GetSQLValueString($idioma, "text"),
+                       GetSQLValueString($_POST['not_precio'], "decimal"),
+                       GetSQLValueString($_POST['not_moneda'], "text"),
+                       GetSQLValueString($_POST['not_tipovideo'], "int"),
+                       GetSQLValueString($_POST['not_video'], "text"));
+  mysql_select_db($database_conexion, $conexion);
+  $Result1 = mysql_query($insertSQL, $conexion) or die(mysql_error());
+
+
+  $insertSQL = sprintf("INSERT INTO cmd_noticia_it (not_id, not_titulo, not_nota, not_activo,not_imagen, not_precio, not_moneda, not_tipovideo, not_video) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                       GetSQLValueString($idped, "int"),
+                       GetSQLValueString($_POST['not_titulo'], "text"),
+                       GetSQLValueString($sContent, "text"),
+                       GetSQLValueString(isset($_POST['not_activo']) ? "true" : "", "defined","1","0"),
+                       GetSQLValueString($nombre_nuevo, "text"),
+                     //  GetSQLValueString($idioma, "text"),
+                       GetSQLValueString($_POST['not_precio'], "decimal"),
+                       GetSQLValueString($_POST['not_moneda'], "text"),
+                       GetSQLValueString($_POST['not_tipovideo'], "int"),
+                       GetSQLValueString($_POST['not_video'], "text"));
+  mysql_select_db($database_conexion, $conexion);
+  $Result1 = mysql_query($insertSQL, $conexion) or die(mysql_error());
+
+  ////
 
   //////////////////////////
 	$insertGoTo = "paquetes.php";
