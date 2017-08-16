@@ -82,8 +82,12 @@ $totalRows_mos_portada = mysql_num_rows($mos_portada);
                             echo $row_mos_album['alb_titulo'];
                         elseif ($_SESSION["idioma"] == 'en')
                             echo $row_mos_album['alb_tit_ingles'];
-                        else
+                        elseif ($_SESSION["idioma"] == 'de')
                             echo $row_mos_album['alb_tit_aleman'];
+                        elseif ($_SESSION["idioma"] == 'fr')
+                            echo $row_mos_album['alb_tit_frances'];
+                        elseif ($_SESSION["idioma"] == 'it')
+                            echo $row_mos_album['alb_tit_italiano'];
                         ?></span>
                 </li>
                  <?php } while ($row_mos_album = mysql_fetch_assoc($mos_album)); ?> 
