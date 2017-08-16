@@ -48,7 +48,7 @@ $row_mos_ser = mysql_fetch_assoc($mos_ser);
                     	<ul>
                         <?php do { ?>  
                             <li><span class="fa fa-angle-right"></span> 
-                                <a href="#"><?php echo $row_mos_ser['ser_descripcion']; ?></a>
+                                <a href="lineas.php"><?php echo $row_mos_ser['ser_descripcion']; ?></a>
                             </li>
                         <?php } while ($row_mos_ser = mysql_fetch_assoc($mos_ser)); ?> 
                         </ul>

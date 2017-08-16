@@ -34,12 +34,12 @@ $row_mos_inicio = mysql_fetch_assoc($mos_inicio);
                         <div class="navbar-collapse collapse clearfix">                                                                                              
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="current dropdown"><a href="index.php"><?php echo $row_mos_url['url_inicio']; ?></a></li>
-                                <li class="dropdown"><a href="nosotros.php"><?php echo $row_mos_url['url_nosotros']; ?></a></li>
-                                <li class="dropdown"><a href="servicios.php"><?php echo $row_mos_url['url_servicios']; ?></a></li>
+                                <li class="dropdown"><a href="empresa.php"><?php echo $row_mos_url['url_nosotros']; ?></a></li>
+                                <li class="dropdown"><a href="lineas.php"><?php echo $row_mos_url['url_servicios']; ?></a></li>
                                 <li><a href="galeria.php"><?php echo $row_mos_url['url_galeria']; ?></a></li>
                                 
                                 <li><a href="videos.php"><?php echo $row_mos_url['url_video']; ?></a></li>
-                                <li><a href="paquetes.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
+                                <li><a href="partners.php"><?php echo $row_mos_url['url_paquetes']; ?></a></li>
                                 <!--<li><a href="partners.php"><?php echo $row_mos_url['url_contacto']; ?></a></li>-->
                                 <li><a href="contacto.php"><?php echo $row_mos_url['url_contacto']; ?></a></li>
                                 
