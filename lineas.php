@@ -58,7 +58,7 @@ $row_mos_count = mysql_fetch_assoc($mos_count);
 
 $total_noticias = mysql_num_rows($mos_count);
 
-$resultado = 5;
+$resultado = 6;
 
 //
 
