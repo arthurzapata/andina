@@ -130,7 +130,7 @@ $totalRows_mos_noticia = mysql_num_rows($mos_noticia);
                                 <ul class="slider">
                                 <?php do { ?>
                                     <li><a href="#">
-                                        <img src="images/clients/<?php echo $row_mos_portada['par_imagen']; ?> ?>" alt="" title="<?php echo $row_mos_portada['par_descrip']; ?>" height="80px" width="200px"></a>
+                                        <img src="images/clients/<?php echo $row_mos_portada['par_imagen'];?>" alt="" title="<?php echo $row_mos_portada['par_descrip']; ?>" height="80px" width="200px"></a>
                                     </li>
                                 <?php } while ($row_mos_portada = mysql_fetch_assoc($mos_portada)); ?>
                                 </ul>
