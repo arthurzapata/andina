@@ -182,27 +182,17 @@ $totalRows_mos_noticia = mysql_num_rows($mos_noticia);
                                             <h3><a href="detalle.php?id=<?php echo $row_mos_noticia['not_id'];?>"><?php echo $row_mos_noticia['not_titulo'];?></a></h3>
                                             <div class="text">
                                                 <?php 
-
-                      $nota = $row_mos_noticia['not_nota'];
-
-                      if(strlen($nota) > 350)
-
-                        {
-
-                        $texto = substr($nota,0,500)." ... "; 
-
-                          echo $texto; 
-
-                        }
-
-                        else
-
-                        {
-
-                          echo $nota;
-
-                        }?>
-                                            </div>
+                                                     /* $nota = $row_mos_noticia['not_nota'];
+                                                      if(strlen($nota) > 350)
+                                                      {
+                                                        $texto = substr($nota,0,500)." ... "; 
+                                                        echo $texto; 
+                                                      }
+                                                      else
+                                                      {
+                                                         echo $nota;
+                                                      }*/?>
+                                           </div>
                                             <div class="link">
                                             <a href="detalle.php?id=<?php echo $row_mos_noticia['not_id'];?>" class="read_more"><?php echo $row_mos_url['url_leer']; ?></span> </a></div>
                                         </div>
