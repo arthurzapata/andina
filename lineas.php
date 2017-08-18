@@ -36,18 +36,18 @@ $totalRows_mos_portada = mysql_num_rows($mos_portada);
 
 mysql_select_db($database_conexion, $conexion);
 
-$query_mos_noticias = "SELECT * FROM ".$tabla." where not_activo=1 order by not_id desc LIMIT 5";
+$query_mos_noticia = "SELECT * FROM ".$tabla." where not_activo=1 order by not_id desc";
 
-$mos_noticias = mysql_query($query_mos_noticias, $conexion) or die(mysql_error());
+$mos_noticia = mysql_query($query_mos_noticia, $conexion) or die(mysql_error());
 
-$row_mos_noticias = mysql_fetch_assoc($mos_noticias);
+$row_mos_noticia = mysql_fetch_assoc($mos_noticia);
 
-$totalRows_mos_noticias = mysql_num_rows($mos_noticias);
+$totalRows_mos_noticia = mysql_num_rows($mos_noticia);
 
 ////
 
 //paginacion
-
+/*
 mysql_select_db($database_conexion, $conexion);
 
 $query_mos_count = "SELECT not_id FROM ".$tabla." where  not_activo=1 order by not_id desc";
@@ -58,7 +58,7 @@ $row_mos_count = mysql_fetch_assoc($mos_count);
 
 $total_noticias = mysql_num_rows($mos_count);
 
-$resultado = 6;
+$resultado = 1000;
 
 //
 
@@ -78,7 +78,7 @@ $mos_noticia = mysql_query($query_mos_noticia, $conexion) or die(mysql_error());
 
 $row_mos_noticia = mysql_fetch_assoc($mos_noticia);
 
-$totalRows_mos_noticia = mysql_num_rows($mos_noticia);
+$totalRows_mos_noticia = mysql_num_rows($mos_noticia);*/
 
 ?>
 <!-- Header Lower -->
@@ -203,7 +203,7 @@ $totalRows_mos_noticia = mysql_num_rows($mos_noticia);
 
                             <?php } while ($row_mos_noticia = mysql_fetch_assoc($mos_noticia)); ?>
             <?php 
-                $paginacion->render(); ?>                  
+               // $paginacion->render(); ?>                  
             <?php
           }
           else
